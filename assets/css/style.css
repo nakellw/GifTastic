@@ -1,0 +1,10 @@
+body{
+    background: url(../images/large-background-gray-silver-glitter-bright-shiny-sparkling-texture-65523611.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron{
+    padding: 20px;
+    border-radius: 0px;
+
+}
