@@ -17,7 +17,7 @@ $(document).ready(function () {
                 var $gDiv = $("<div class ='gif'>")
                 var rate = results[i].rating; 
                 var $p = $("<p>").text("Rating: " + rate.toUpperCase());
-                $p.addClass("text-center");
+                $p.addClass("textRate");
                 $p.addClass("gif-rating");
 
                 var $gifImage = $("<img>");
@@ -33,18 +33,6 @@ $(document).ready(function () {
         });
     };
 
-
-        // Play/Pause Feature
-    $('body').on('click', '.gif-image', function () {
-
-        var src = $(this).attr("src");
-        if ($(this).hasClass('playing')) {
-            $(this).attr('src', src.replace(/\.gif/i, "_s.gif"));
-        } else {
-            $(this).addClass('playing');
-            $(this).attr('src', src.replace(/\_s.gif/i, ".gif"));
-        }
-    });
 
 
     // Display Buttons
@@ -70,6 +58,18 @@ $("#form-submit").on("click", function (event) {
     var input = $("#form-input").val().trim();
     terms.push(input);
     gifButtons();
+});
+
+ // Play/Pause Feature
+ $('body').on('click', '.gif-image', function () {
+
+    var src = $(this).attr("src");
+    if ($(this).hasClass('playing')) {
+        $(this).attr('src', src.replace(/\.gif/i, "_s.gif"));
+    } else {
+        $(this).addClass('playing');
+        $(this).attr('src', src.replace(/\_s.gif/i, ".gif"));
+    }
 });
 
 $(document).on("click", ".gif-button", gifDisplay);
