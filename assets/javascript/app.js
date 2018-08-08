@@ -4,8 +4,7 @@ $(document).ready(function () {
         var gif = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q="  + gif + "&api_key=FKIYGHCl5MrA23QTDRB52agaoGe2AI7c";
 
-
-        https://api.giphy.com/v1/gifs/search?api_key=FKIYGHCl5MrA23QTDRB52agaoGe2AI7c&q=&limit=25&offset=0&rating=G&lang=en
+ https://api.giphy.com/v1/gifs/search?api_key=FKIYGHCl5MrA23QTDRB52agaoGe2AI7c&q=&limit=25&offset=0&rating=G&lang=en
 
         $.ajax({
             url: queryURL,
@@ -18,7 +17,6 @@ $(document).ready(function () {
                 var rating = results[i].rating;
 
                 var $p = $("<p>").text("Rating: " + rating.toUpperCase());
-
                 $p.addClass("text-center");
                 $p.addClass("gif-rating");
 
@@ -36,7 +34,7 @@ $(document).ready(function () {
     };
 
 
-    $('body').on('click', '.giphy', function () {
+    $('body').on('click', '.gif-image', function () {
 
         var src = $(this).attr("src");
         if ($(this).hasClass('playing')) {
@@ -47,10 +45,10 @@ $(document).ready(function () {
         }
     });
 
-var topics = ["cats", "dogs", "fish"];
+var topics = ["basketball", "football", "soccer"];
 
 function gifButtons() {
-    $("#DynamButtons").empty();
+    $("#Buttons").empty();
 
     for (var i = 0; i < topics.length; i++) {
         var b = $("<button>");
@@ -58,7 +56,7 @@ function gifButtons() {
         b.addClass("btn")
         b.attr("data-name", topics[i]);
         b.text(topics[i]);
-        $("#DynamButtons").append(b);
+        $("#Buttons").append(b);
     }
 };
 
