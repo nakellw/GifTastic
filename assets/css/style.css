@@ -8,3 +8,9 @@ body{
     border-radius: 0px;
 
 }
+
+.gif-button {
+    margin: auto;
+    text-transform: capitalize;
+}
+
